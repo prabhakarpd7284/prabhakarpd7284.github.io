@@ -150,29 +150,110 @@
         <div class="card">
           <h3>Algorithmic Trading Platform</h3>
           <p>
-            Full-stack trading system with real-time WebSocket streaming, broker abstraction,
-            multi-timeframe analysis, and AI-assisted market insights.
+            End-to-end trading system for Indian markets with real-time data ingestion,
+            multi-timeframe analysis, strategy orchestration, and live dashboards.
           </p>
-          <ul>
-            <li>Django, Celery, Redis, PostgreSQL backend</li>
-            <li>React + TypeScript frontend with live dashboards</li>
-            <li>&lt;100ms real-time updates using Django Channels</li>
-          </ul>
         </div>
         <div class="card">
           <h3>Argus – Eye Health Screening Platform</h3>
           <p>
-            Web platform streamlining eye examination workflows, reducing patient processing time
-            by 50%. Winner of TopCoder Hackathon.
+            Workflow automation platform for clinical eye exams, reducing patient
+            processing time by 50%. Winner of TopCoder Hackathon.
           </p>
         </div>
         <div class="card">
           <h3>Clickbait Detection Chrome Extension</h3>
           <p>
-            ML-powered browser extension achieving 91% accuracy using cross-origin messaging
-            and real-time inference.
+            ML-powered browser extension for real-time headline classification with
+            91% accuracy.
           </p>
         </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects – Architecture Deep Dive</h2>
+
+      <div class="card" style="margin-bottom: 32px;">
+        <h3>Algorithmic Trading Platform – System Architecture</h3>
+        <p>
+          Designed as a low-latency, horizontally scalable system with clear separation
+          between ingestion, analysis, execution, and presentation layers.
+        </p>
+        <pre style="background:#020617;border:1px solid var(--border);border-radius:12px;padding:16px;overflow:auto;color:var(--muted);">
+┌───────────────┐        ┌───────────────────┐
+│ Broker APIs   │──────▶ │ Market Data Fetch │
+│ (Fyers, etc.) │        │ 5m / Tick Feeds   │
+└───────────────┘        └─────────┬─────────┘
+                                    │
+                                    ▼
+                          ┌───────────────────┐
+                          │ Celery Workers    │
+                          │ 990+ parallel     │
+                          │ analysis tasks    │
+                          └─────────┬─────────┘
+                                    │
+        ┌───────────────────────────┼───────────────────────────┐
+        ▼                           ▼                           ▼
+┌───────────────┐        ┌───────────────────┐        ┌───────────────────┐
+│ Redis Cache   │        │ PostgreSQL        │        │ Strategy Engine   │
+│ Hot data TTL  │        │ Historical data   │        │ MTF / Signals     │
+└───────────────┘        └───────────────────┘        └─────────┬─────────┘
+                                                                      │
+                                                                      ▼
+                                                        ┌───────────────────┐
+                                                        │ Django Channels   │
+                                                        │ WebSocket layer   │
+                                                        └─────────┬─────────┘
+                                                                      │
+                                                                      ▼
+                                                        ┌───────────────────┐
+                                                        │ React Dashboard   │
+                                                        │ Live updates      │
+                                                        └───────────────────┘
+        </pre>
+        <ul>
+          <li>Latency-optimized real-time updates (&lt;100ms) via WebSockets</li>
+          <li>Fault-tolerant async processing using Celery + Redis</li>
+          <li>Designed for strategy extensibility and broker abstraction</li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-bottom: 32px;">
+        <h3>AI-Enabled Seller Ticket Resolution – Amazon</h3>
+        <p>
+          Internal platform enabling auditors to resolve complex seller escalations
+          using AI-assisted multi-step workflows.
+        </p>
+        <pre style="background:#020617;border:1px solid var(--border);border-radius:12px;padding:16px;overflow:auto;color:var(--muted);">
+┌───────────────┐
+│ Seller Ticket │
+└───────┬───────┘
+        ▼
+┌────────────────────┐
+│ Event Ingestion    │
+│ (SQS / SNS)        │
+└─────────┬──────────┘
+          ▼
+┌────────────────────┐
+│ LLM Orchestrator   │
+│ Claude + Rules     │
+└─────────┬──────────┘
+          ▼
+┌────────────────────┐        ┌────────────────────┐
+│ Data Fetch Layer   │◀──────▶│ DynamoDB / Redshift│
+└─────────┬──────────┘        └────────────────────┘
+          ▼
+┌────────────────────┐
+│ Audit UI (Web)     │
+│ Human-in-the-loop  │
+└────────────────────┘
+        </pre>
+        <ul>
+          <li>Agentic AI workflows with full auditability</li>
+          <li>Event-driven design for scale and traceability</li>
+          <li>Improved decision consistency and audit accuracy</li>
+        </ul>
       </div>
     </section>
 
