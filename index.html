@@ -1,3 +1,203 @@
-<center><h1><bold>Wait Till I make it presentable.</bold></h1><center>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prabhakar Prasad | Software Engineer</title>
+  <meta name="description" content="Prabhakar Prasad – Full-stack software engineer with experience building scalable systems, AI-powered platforms, and trading infrastructure." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #020617;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --border: #1e293b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(180deg, #020617, #020617 40%, #020617);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 72px;
+    }
+    .title h1 {
+      font-size: 2.4rem;
+      margin: 0 0 8px 0;
+    }
+    .title p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 700px;
+    }
+    .links a {
+      margin-left: 16px;
+      font-weight: 500;
+    }
+    section { margin-bottom: 72px; }
+    section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: rgba(2, 6, 23, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+    }
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+    .card p { margin: 0; color: var(--muted); }
+    ul {
+      padding-left: 18px;
+      margin: 12px 0 0 0;
+    }
+    li { margin-bottom: 6px; }
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="title">
+        <h1>Prabhakar Prasad</h1>
+        <p>
+          Software Engineer building scalable distributed systems, AI-powered automation platforms,
+          and real-time trading infrastructure. Previously SDE II at Amazon.
+        </p>
+      </div>
+      <div class="links">
+        <a href="mailto:prabhakarpd7284@gmail.com">Email</a>
+        <a href="https://github.com/prabhakarpd7284" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/pd7284" target="_blank">LinkedIn</a>
+      </div>
+    </header>
 
-  <center><h2><bold>Have Patience</bold></h2></center>
+    <section>
+      <h2>About</h2>
+      <p>
+        I am a full-stack engineer with experience building high-scale backend systems (10M+ TPS),
+        AI-enabled workflows, and cloud-native platforms on AWS. I enjoy owning problems end-to-end,
+        designing clean architectures, and shipping systems that are reliable, observable, and easy
+        to extend.
+      </p>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Amazon — Software Development Engineer II</h3>
+          <p>2022 – 2024 · Bangalore, India</p>
+          <ul>
+            <li>Built AI-powered ticket resolution and audit platforms using LLMs and event-driven AWS architecture.</li>
+            <li>Improved audit accuracy from 88% to 97% using automated anomaly detection pipelines.</li>
+            <li>Designed secure, scalable internal tools with modern authorization and observability.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Amazon — Software Development Engineer I</h3>
+          <p>2020 – 2022 · Bangalore, India</p>
+          <ul>
+            <li>Designed and scaled high-throughput microservices with &lt;100ms p99 latency.</li>
+            <li>Migrated legacy systems to AWS, reducing infrastructure costs by 35%.</li>
+            <li>Maintained 99.95% uptime during peak traffic events like Prime Day.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Algorithmic Trading Platform</h3>
+          <p>
+            Full-stack trading system with real-time WebSocket streaming, broker abstraction,
+            multi-timeframe analysis, and AI-assisted market insights.
+          </p>
+          <ul>
+            <li>Django, Celery, Redis, PostgreSQL backend</li>
+            <li>React + TypeScript frontend with live dashboards</li>
+            <li>&lt;100ms real-time updates using Django Channels</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Argus – Eye Health Screening Platform</h3>
+          <p>
+            Web platform streamlining eye examination workflows, reducing patient processing time
+            by 50%. Winner of TopCoder Hackathon.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Clickbait Detection Chrome Extension</h3>
+          <p>
+            ML-powered browser extension achieving 91% accuracy using cross-origin messaging
+            and real-time inference.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Backend & Cloud</h3>
+          <p>Python, Java, Django, Spring Boot, FastAPI, AWS, Microservices, Event-Driven Systems</p>
+        </div>
+        <div class="card">
+          <h3>Frontend</h3>
+          <p>React, TypeScript, Angular, HTML, CSS, WebSockets</p>
+        </div>
+        <div class="card">
+          <h3>AI & Data</h3>
+          <p>LLM Integration, LangChain, TensorFlow, Scikit-learn, Redis, PostgreSQL</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© 2025 Prabhakar Prasad</div>
+      <div>Delhi, India · Open to remote opportunities</div>
+    </footer>
+  </div>
+</body>
+</html>
